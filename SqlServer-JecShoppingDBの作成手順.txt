@@ -1,0 +1,39 @@
+=================================================
+    JecShopping： SQL ServerにDBを作成する手順
+=================================================
+
+以下の手順でSQL ServerにDBを作成して下さい
+
+
+1. SQL Server Management Studio（SSMS）を開く
+
+    ・サーバ名  ： 10.32.97.1\Web
+    ・認証      ： SQL Server認証
+    ・ログイン  ： 学籍番号（22jnXXXX）
+    ・パスワード： 学籍番号（22jnXXXX）
+
+2. 下記ファイルのSQLを実行する
+
+    ⇒ Public\22YN_WebプロⅡ【夜間】\JecShopping\
+        ⇒ JecShoppingDB.sql
+
+3. 自分のDBに以下の6つのテーブルが作成されていることを確認する。
+
+    ・Cart
+    ・Goods
+    ・GoodsGroup
+    ・Member
+    ・Sale
+    ・SaleDetail
+
+4.helpers/ Config.phpを編集する
+
+	演習帳 P.11 の内容に沿って修正する
+
+	----------------------------------------------
+	<?php
+	    // DB接続設定
+	    define('DSN', 'sqlsrv:server=10.32.97.1\Web;database=22yn0114');
+	    define('DB_USER', '22yn0114');
+	    define('DB_PASSWORD', '22yn0114');
+	----------------------------------------------
